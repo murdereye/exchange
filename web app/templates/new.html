@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>	
+	<link href="static/main.css" rel="stylesheet">
+	<meta charset="UTF-8">
+	<title> Döviz Çevirici</title>
+
+</head>
+	<body>
+	<div class="content">
+		<h1 align="middle"> Döviz Çevirici </h1>
+		<form action={{url_for('success')}} align="middle" method="POST"> 
+				<input type="number" name="money" id="money" value="1" width="2" required > </input>
+				<select name="cevr" placeholder="Çevrilecek Para Birimi" required >
+					{% for val in new %}
+					<option name="{{val}}"> {{val}}</option>
+					{% endfor %}
+				</select>
+				<select name="neye" placeholder="Neye Çevrilecek" required > 
+					{% for val in new_2 %}
+					<option name="{{val}}"> {{val}}</option>
+					{% endfor %}
+				</select>
+				<button type="submit">Çevir</button> <br/>
+				<input type="text" name="res" size="6" align="left" readonly value="{{res}}"></input> <br/>
+				{% for x,y in lists %}
+				<input type="text" size="25" name="lists" readonly value="{{x}}" ></input>
+				<input type="text" size="6" name="lists" readonly value="{{y}}" ></input> <br/>
+				{% endfor %}
+				</div>	
+		</form>				
+	</body>
+</html>
