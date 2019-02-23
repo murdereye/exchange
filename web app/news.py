@@ -11,7 +11,7 @@ def prg():
 			new.remove(x)
 			new.insert(0,x)
 	new2=firstfun()
-	return render_template("new2.html",new=new,new_2=new2)
+	return render_template("new.html",new=new,new_2=new2)
 
 
 @app.route("/",methods=['POST'])
@@ -28,7 +28,7 @@ def success():
 		new2.remove(to)
 		new2.insert(0,to)
 		lists=detail(money,from_,to)
-		return render_template("new2.html",new=new,new_2=new2,res=res,lists=lists)
+		return render_template("new.html",new=new,new_2=new2,res=res,lists=lists)
 
 if __name__=='__main__':
     app.debug=True
